@@ -109,7 +109,8 @@ def autoreload(path, extension, cmd):
 if __name__ == '__main__':
     import sys
     path = './'
-    extension = 'py,mako,po,mo,css,js'
+    # extension = 'py,mako,po,mo,css,js'
+    extension = 'py'
     try:
         port = sys.argv[1]
     except IndexError:
