@@ -24,6 +24,11 @@ def todo():
     return render_template('todo.html', items=items)
 
 
+@app.route('/hehe')
+def hehe():
+    return 'hehe'
+
+
 @app.route('/new', methods=['POST'])
 def new():
     item_doc = {

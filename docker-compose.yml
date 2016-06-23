@@ -1,9 +1,10 @@
 web:
-    #restart: always
+    restart: always
     build: .
     #command: python -u /flask_compose/app/app.py
     #command: /usr/local/bin/gunicorn -w4 -b0.0.0.0:5000 app:app
-    command: /usr/local/bin/gunicorn -w4 -b0.0.0.0:5000 app:app --chdir /flask_compose/app
+    #command: /usr/local/bin/gunicorn -w4 -b0.0.0.0:5000 app:app --chdir /flask_compose/app
+    command: ./run.py
     ports:
         - "5000:5000"
     volumes:

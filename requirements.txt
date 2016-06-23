@@ -9,3 +9,5 @@ Flask-Script
 Flask-Migrate
 simplejson
 gunicorn
+pyinotify
+colorama
