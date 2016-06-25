@@ -26,7 +26,8 @@ def todo():
 
 @app.route('/hehe')
 def hehe():
-    return 'hehe'
+    import time
+    return 'hehe' + '<br>' + str(time.time())
 
 
 @app.route('/new', methods=['POST'])
