@@ -102,11 +102,7 @@ def users():
 
 @app.route('/createdb')
 def createDatabase():
-    HOSTNAME = 'localhost'
-    try:
-        HOSTNAME = request.args['hostname']
-    except:
-        pass
+    HOSTNAME = 'mysqlserver'
     database = CreateDB(hostname = HOSTNAME)
     return json.dumps({'status':True})
 

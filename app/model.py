@@ -6,7 +6,7 @@ from flask.ext.migrate import Migrate, MigrateCommand
 
 # Database Configurations
 app = Flask(__name__)
-DATABASE = 'newtest'
+DATABASE = 'wordpress'
 PASSWORD = 'p@ssw0rd123'
 USER = 'root'
 HOSTNAME = 'mysqlserver'
@@ -46,8 +46,9 @@ class CreateDB(object):
         if hostname is not None:
             HOSTNAME = hostname
         import sqlalchemy
+        mysql_url = 'mysql://%s:%s@%s' % (USER, PASSWORD, HOSTNAME)
         engine = sqlalchemy.create_engine(
-            'mysql://%s:%s@%s' % (USER, PASSWORD, HOSTNAME)
+            mysql_url
         )  # connect to server
         engine.execute("CREATE DATABASE IF NOT EXISTS %s " % (DATABASE))
 
